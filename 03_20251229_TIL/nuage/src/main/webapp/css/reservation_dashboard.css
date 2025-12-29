@@ -1,0 +1,97 @@
+/* reservation_dashboard.css */
+.dashboard-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--dusty-rose);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 2인 공유 레이아웃 (원장, 매니저) */
+.staff-view-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.staff-column {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 20px;
+    border: 2px solid var(--cream-beige);
+}
+
+.staff-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1.5px dashed var(--main-pink);
+}
+
+.staff-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.staff-role {
+    font-size: 14px;
+    color: var(--dusty-rose);
+    margin-top: 5px;
+}
+
+/* 타임라인 및 예약 블록 기본 스타일 */
+.timeline-placeholder {
+    height: 600px;
+    background-color: #fcfcfc;
+    border-radius: var(--radius-md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    font-style: italic;
+    border: 1px solid #eee;
+}
+
+/* 완료 체크박스 및 상태 디자인 */
+.res-block {
+    padding: 15px;
+    border-radius: var(--radius-md);
+    margin-bottom: 10px;
+    background-color: var(--main-pink);
+    color: #fff;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.res-block.completed {
+    background-color: #e0e0e0;
+    color: #888;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.complete-check {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
