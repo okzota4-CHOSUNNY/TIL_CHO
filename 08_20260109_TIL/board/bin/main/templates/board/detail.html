@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 조회</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <h1 class="text-center mb-4">게시글 조회</h1>
+
+                    <div th:object="${board}">
+                        <div class="mb-3">
+                            <label class="form-label">제목</label>
+                            <input type="text" class="form-control" th:field="*{title}" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">작성자</label>
+                            <input type="text" class="form-control" th:field="*{writer}" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">내용</label>
+                            <textarea class="form-control" th:field="*{content}" rows="10" readonly></textarea>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-center mt-4">
+                            <button type="button" class="btn btn-outline-primary w-25" onclick="moveList()">목록</button>
+                            <button type="button" class="btn btn-primary w-25" onclick="moveUpdate()">수정</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/di8st/js/bootstrap.bundle.min.js"></script>
+    <script th:inline="javascript">
+        /* 타임리프 변수를 JS로 가져오기 */
+        let no = '[[${board.no}]]'
+
+        function moveList() {
+            location.href = '/board/list';
+        }
+
+        function moveUpdate() {
+            location.href = '/board/update?no=' + no
+        }
+    </script>
+</body>
+
+</html>
